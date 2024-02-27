@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { z } from 'zod'
 
 const currentUserSchema = z.object({
