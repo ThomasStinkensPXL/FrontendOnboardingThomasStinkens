@@ -11,8 +11,7 @@ const httpClient: AxiosInstance = axios.create({
 
 httpClient.interceptors.request.use(
 	(config) => {
-		// TODO: Get Token out of localstorage and user it here. (Next step in the onboarding app)
-		config.headers.Authorization = 'Bearer '
+		config.headers.Authorization = 'Bearer ' + localStorage.getItem('accessToken')
 		return config
 	},
 	(error) => {
