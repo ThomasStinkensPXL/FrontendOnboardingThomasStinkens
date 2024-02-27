@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import { httpClient } from '@/http/httpclient'
 import type { AuthTokens } from '@/models/auth/response/tokens.model'
+import type { CurrentUser } from '@/models/user/current/currentUser.model'
 import type { User } from '@/models/user/details/user.model'
 // import { AxiosInstance } from 'axios'
 
@@ -28,7 +29,7 @@ export const authService: AuthService = {
 		return response.data
 	},
 
-	getCurrentUser: async (): Promise<User> => {
+	getCurrentUser: async (): Promise<CurrentUser> => {
 		const response = await httpClient.get('/auth/userinfo')
 		return response.data
 	},
