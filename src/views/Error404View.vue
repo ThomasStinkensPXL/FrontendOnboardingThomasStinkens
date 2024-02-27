@@ -2,12 +2,4 @@
 	<h1>404 Not Found</h1>
 </template>
 
-<script>
-export default {
-	name: 'Error404View',
-}
-</script>
-
-<style scoped>
-
-</style>
+<script setup lang="ts"></script>
