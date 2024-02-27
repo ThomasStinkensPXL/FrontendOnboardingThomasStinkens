@@ -8,6 +8,7 @@ import type { User } from '@/models/user/details/user.model'
 interface AuthService {
 	login: (username: string, password: string) => Promise<AuthTokens>
 	getCurrentUser: () => Promise<User>
+	logout: () => void
 }
 
 export const authService: AuthService = {
@@ -32,6 +33,10 @@ export const authService: AuthService = {
 	getCurrentUser: async (): Promise<CurrentUser> => {
 		const response = await httpClient.get('/auth/userinfo')
 		return response.data
+	},
+
+	logout: (): void => {
+		httpClient.post('/auth/revoke')
 	},
 }
 

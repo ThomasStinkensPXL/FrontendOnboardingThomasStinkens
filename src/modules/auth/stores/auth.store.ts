@@ -30,11 +30,18 @@ export const useAuthStore = defineStore('auth', () => {
 		accessToken.value = response.access_token
 	}
 
+	function logout(): void {
+		authService.logout()
+		setCurrentUser(null)
+		accessToken.value = null
+	}
+
 	return {
 		currentUser,
 		isAuthenticated,
 		getCurrentUser,
 		setCurrentUser,
 		login,
+		logout,
 	}
 })
