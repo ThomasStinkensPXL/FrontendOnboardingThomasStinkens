@@ -38,6 +38,7 @@ export const useAuthStore = defineStore('auth', () => {
 
 	return {
 		currentUser,
+		accessToken,
 		isAuthenticated,
 		getCurrentUser,
 		setCurrentUser,
