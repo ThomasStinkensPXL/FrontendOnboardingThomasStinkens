@@ -1,2 +1,21 @@
 {
+  "auth": {
+    "create_account": "Create one!",
+    "forgot_password": "Forgot password?",
+    "login": {
+      "description": "At mi amet vulputate ut dictum. Quam ac ut a feugiat.",
+      "incorrect": "Wrong username/password",
+      "welcome": "Wellcome!"
+    },
+    "no_account": "Don't have an account yet?"
+  },
+  "shared": {
+    "continue": "Continue",
+    "email": {
+      "long": "Email address"
+    },
+    "input_placeholder": "Type here...",
+    "password": "Password",
+    "username": "Username"
+  }
 }

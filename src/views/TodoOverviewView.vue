@@ -1,13 +1,10 @@
-<template>
-	<p>Overview!</p>
-</template>
+<script setup>
+import { useI18n } from 'vue-i18n'
 
-<script>
-export default {
-	name: 'TodoOverviewView',
-}
+const { t } = useI18n()
 </script>
 
-<style scoped>
-
-</style>
+<template>
+	<p>Overview!</p>
+	<p>{{ t('message.the_world') }}</p>
+</template>
