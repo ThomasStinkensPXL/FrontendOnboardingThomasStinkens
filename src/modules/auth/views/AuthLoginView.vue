@@ -25,13 +25,20 @@ async function handleLogin(data: { username: string; password: string }): Promis
 </script>
 
 <template>
-	<h1>{{ t('auth.login.welcome') }}</h1>
-	<p>{{ t('auth.login.description') }}</p>
-	<AuthLoginForm
-		:is-incorrect="isIncorrect"
-		@submit="handleLogin"
-	/>
-	<p>
-		{{ t('auth.no_account') }} <span>{{ t('auth.create_account') }}</span>
-	</p>
+	<div class="flex h-screen w-screen flex-col items-center justify-center">
+		<div>
+			<h1 class="w-[360px] text-3xl font-semibold">{{ t('auth.login.welcome') }}</h1>
+			<p class="w-[360px] pb-2 font-semibold">{{ t('auth.login.description') }}</p>
+		</div>
+
+		<div class="mb-2 w-[360px]">
+			<AuthLoginForm
+				:is-incorrect="isIncorrect"
+				@submit="handleLogin"
+			/>
+		</div>
+		<p class="w-[360px] text-center">
+			{{ t('auth.no_account') }} <span class="font-semibold">{{ t('auth.create_account') }}</span>
+		</p>
+	</div>
 </template>

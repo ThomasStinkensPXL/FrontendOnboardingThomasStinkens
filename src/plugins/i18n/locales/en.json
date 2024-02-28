@@ -5,7 +5,7 @@
     "login": {
       "description": "At mi amet vulputate ut dictum. Quam ac ut a feugiat.",
       "incorrect": "Wrong username/password",
-      "welcome": "Wellcome!"
+      "welcome": "Welcome!"
     },
     "no_account": "Don't have an account yet?"
   },
