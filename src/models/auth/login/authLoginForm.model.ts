@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { z } from 'zod'
 
 const authLoginFormSchema = z.object({
