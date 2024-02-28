@@ -7,7 +7,6 @@ import AuthLoginForm from '@/modules/auth/components/AuthLoginForm.vue'
 import { useAuthStore } from '@/modules/auth/stores/auth.store'
 
 const { t } = useI18n()
-
 const authStore = useAuthStore()
 const router = useRouter()
 

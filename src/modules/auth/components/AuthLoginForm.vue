@@ -5,14 +5,15 @@ import { useI18n } from 'vue-i18n'
 import EyeIcon from '@/icons/EyeIcon.vue'
 import type { AuthLoginForm } from '@/models/auth/login/authLoginForm.model'
 
-const { t } = useI18n()
+const props = defineProps<{
+	isIncorrect?: string
+}>()
+
 const emit = defineEmits<{
 	submit: [value: AuthLoginForm]
 }>()
 
-const props = defineProps<{
-	isIncorrect?: string
-}>()
+const { t } = useI18n()
 
 const username = ref<string>('')
 const password = ref<string>('')
