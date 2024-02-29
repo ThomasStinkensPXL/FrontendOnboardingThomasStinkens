@@ -10,7 +10,7 @@ const props = defineProps<{
 	label: string
 }>()
 
-const model = defineModel<never>({
+const model = defineModel<number | string | null>({
 	required: true,
 })
 

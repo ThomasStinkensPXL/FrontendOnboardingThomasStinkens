@@ -6,6 +6,8 @@ import AppButton from '@/components/AppButton.vue'
 import FormInput from '@/components/FormInput.vue'
 import FormPasswordInput from '@/components/FormPasswordInput.vue'
 import type { AuthLoginForm } from '@/models/auth/login/authLoginForm.model'
+import { useForm } from 'formango'
+import { z } from 'zod'
 
 const props = defineProps<{
 	isIncorrect?: string
@@ -17,11 +19,26 @@ const emit = defineEmits<{
 
 const { t } = useI18n()
 
-const username = ref<string>('')
-const password = ref<string>('')
+const loginForm = z.object({
+	username: z.string().email().min(1),
+	password: z.string().min(1),
+})
+
+const { form } = useForm({
+	schema: loginForm,
+	initialState: {
+		username: '',
+		password: '',
+	},
+})
+
+const username = form.register('username', '')
+const password = form.register('password', '')
 
 function submit(): void {
-	emit('submit', { username: username.value, password: password.value })
+	if (form.isValid) {
+		emit('submit', { username: username.modelValue, password: password.modelValue })
+	}
 }
 </script>
 
@@ -31,14 +48,14 @@ function submit(): void {
 		@submit.prevent="submit()"
 	>
 		<FormInput
-			v-model="username"
+			v-bind="username"
 			input-name="username"
 			input-type="text"
 			:label="t('shared.email.long')"
 		/>
 
 		<FormPasswordInput
-			v-model="password"
+			v-bind="password"
 			input-name="password"
 			:label="t('shared.password')"
 		/>
@@ -50,7 +67,11 @@ function submit(): void {
 			>{{ t('auth.forgot_password') }}</a
 		>
 
-		<AppButton :text="t('shared.continue')" />
+		<AppButton
+			:class="{ 'bg-light': !form.isValid }"
+			:disabled="!form.isValid"
+			:text="t('shared.continue')"
+		/>
 		<p
 			v-if="props.isIncorrect"
 			class="relative w-full rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
