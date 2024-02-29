@@ -5,6 +5,5 @@ const { t } = useI18n()
 </script>
 
 <template>
-	<p>Overview!</p>
-	<p>{{ t('message.the_world') }}</p>
+	<p>{{ t('shared.empty') }}</p>
 </template>

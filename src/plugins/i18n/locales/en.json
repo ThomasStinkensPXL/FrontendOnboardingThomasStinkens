@@ -10,10 +10,12 @@
     "no_account": "Don't have an account yet?"
   },
   "shared": {
+    "404": "[404] Page not Found",
     "continue": "Continue",
     "email": {
       "long": "Email address"
     },
+    "empty": "This page does not have any content yet.",
     "input_placeholder": "Type here...",
     "password": "Password",
     "username": "Username"

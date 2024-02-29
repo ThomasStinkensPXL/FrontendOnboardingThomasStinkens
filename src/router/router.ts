@@ -3,21 +3,27 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import { useAuthStore } from '@/modules/auth/stores/auth.store'
 
+enum RouteNames {
+	index = 'index',
+	login = 'login',
+	todos = 'todos',
+}
+
 const routes: RouteRecordRaw[] = [
 	{
 		path: '/login',
-		name: 'login',
+		name: RouteNames.login,
 		component: async () => import('@/modules/auth/views/AuthLoginView.vue'),
 	},
 	{
 		path: '/',
-		name: 'index',
+		name: RouteNames.index,
 		meta: { requiresAuth: true },
 		redirect: '/todos',
 		children: [
 			{
 				path: '/todos',
-				name: 'todos',
+				name: RouteNames.todos,
 				component: async () => import('@/views/TodoOverviewView.vue'),
 			},
 		],
@@ -37,7 +43,7 @@ const router = createRouter({
 router.beforeEach((to) => {
 	if (to.meta.requiresAuth && !useAuthStore().isAuthenticated) {
 		return {
-			name: 'login',
+			name: RouteNames.login,
 		}
 	}
 })
