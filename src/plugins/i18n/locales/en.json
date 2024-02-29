@@ -12,6 +12,7 @@
   "shared": {
     "404": "[404] Page not Found",
     "continue": "Continue",
+    "dateFormat": "DD MMM YYYY (HH:mm)",
     "email": {
       "long": "Email address"
     },

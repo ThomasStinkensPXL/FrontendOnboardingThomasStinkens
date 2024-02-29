@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import TodoList from '@/modules/todos/components/TodoList.vue'
 import { useTodoIndexQuery } from '@/modules/todos/queries/todoIndex.query'
-import { useI18n } from 'vue-i18n'
-import AppTitle from '@/components/AppTitle.vue'
 
 const { data: todos, isLoading } = useTodoIndexQuery()
-const { t } = useI18n()
 </script>
 
 <template>

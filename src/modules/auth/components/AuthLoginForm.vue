@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import { useForm } from 'formango'
 import { useI18n } from 'vue-i18n'
+import { z } from 'zod'
 
 import AppButton from '@/components/AppButton.vue'
 import FormInput from '@/components/FormInput.vue'
 import FormPasswordInput from '@/components/FormPasswordInput.vue'
 import type { AuthLoginForm } from '@/models/auth/login/authLoginForm.model'
-import { useForm } from 'formango'
-import { z } from 'zod'
 
 const props = defineProps<{
 	isIncorrect?: string

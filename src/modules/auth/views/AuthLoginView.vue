@@ -3,10 +3,10 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
+import AppText from '@/components/AppText.vue'
+import AppTitle from '@/components/AppTitle.vue'
 import AuthLoginForm from '@/modules/auth/components/AuthLoginForm.vue'
 import { useAuthStore } from '@/modules/auth/stores/auth.store'
-import AppTitle from '@/components/AppTitle.vue'
-import AppText from '@/components/AppText.vue'
 
 const { t } = useI18n()
 const authStore = useAuthStore()

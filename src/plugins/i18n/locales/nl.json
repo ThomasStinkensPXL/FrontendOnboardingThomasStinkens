@@ -12,6 +12,7 @@
   "shared": {
     "404": "[404] Pagina niet gevonden",
     "continue": "Ga verder",
+    "dateFormat": "DD MMM YYYY (HH:mm)",
     "email": {
       "long": "E-mailadres"
     },

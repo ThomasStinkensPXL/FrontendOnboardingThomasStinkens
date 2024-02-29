@@ -1,5 +1,5 @@
-import type { Todo } from '@/models/todos/todo.module'
 import { httpClient } from '@/http/httpclient'
+import type { Todo } from '@/models/todos/todo.module'
 
 interface TodoService {
 	getAll: () => Promise<Todo[]>
