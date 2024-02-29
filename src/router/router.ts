@@ -24,7 +24,7 @@ const routes: RouteRecordRaw[] = [
 			{
 				path: '/todos',
 				name: RouteNames.todos,
-				component: async () => import('@/views/TodoOverviewView.vue'),
+				component: async () => import('@/modules/todos/views/TodoOverviewView.vue'),
 			},
 		],
 	},
@@ -40,7 +40,7 @@ const router = createRouter({
 	routes: routes,
 })
 
-router.beforeEach((to) => {
+router.beforeEach(async (to) => {
 	if (to.meta.requiresAuth && !useAuthStore().isAuthenticated) {
 		return {
 			name: RouteNames.login,

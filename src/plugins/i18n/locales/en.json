@@ -17,7 +17,12 @@
     },
     "empty": "This page does not have any content yet.",
     "input_placeholder": "Type here...",
+    "loading": "Loading...",
     "password": "Password",
     "username": "Username"
+  },
+  "todos": {
+    "empty": "No todos found",
+    "my_todos": "My todos"
   }
 }

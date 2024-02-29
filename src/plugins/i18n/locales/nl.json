@@ -17,7 +17,12 @@
     },
     "empty": "Deze pagina heeft nog geen inhoud.",
     "input_placeholder": "Typ hier...",
+    "loading": "Aan het laden...",
     "password": "Wachtwoord",
     "username": "Gebruikersnaam"
+  },
+  "todos": {
+    "empty": "Geen to do's gevonden.",
+    "my_todos": "Mijn to do's"
   }
 }

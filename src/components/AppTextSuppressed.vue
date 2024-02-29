@@ -5,5 +5,5 @@ const props = defineProps<{
 </script>
 
 <template>
-	<h1 class="w-full text-3xl font-semibold">{{ props.text }}</h1>
+	<p class="pb-2 text-dark-lightest">{{ props.text }}</p>
 </template>
