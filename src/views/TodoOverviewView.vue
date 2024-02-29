@@ -1,10 +1,11 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 
+import AppTitle from '@/components/AppTitle.vue'
+
 const { t } = useI18n()
 </script>
 
 <template>
-	<p>Overview!</p>
-	<p>{{ t('message.the_world') }}</p>
+	<AppTitle :text="t('shared.empty')" />
 </template>
