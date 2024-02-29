@@ -1,8 +1,10 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 
+import AppTitle from '@/components/AppTitle.vue'
+
 const { t } = useI18n()
 </script>
 <template>
-	<h1>{{ t('shared.404') }}</h1>
+	<AppTitle :text="t('shared.404')" />
 </template>

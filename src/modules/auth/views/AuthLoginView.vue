@@ -5,6 +5,8 @@ import { useRouter } from 'vue-router'
 
 import AuthLoginForm from '@/modules/auth/components/AuthLoginForm.vue'
 import { useAuthStore } from '@/modules/auth/stores/auth.store'
+import AppTitle from '@/components/AppTitle.vue'
+import AppText from '@/components/AppText.vue'
 
 const { t } = useI18n()
 const authStore = useAuthStore()
@@ -26,8 +28,14 @@ async function handleLogin(data: { username: string; password: string }): Promis
 <template>
 	<div class="flex h-screen w-screen flex-col items-center justify-center">
 		<div>
-			<h1 class="w-[360px] text-3xl font-semibold">{{ t('auth.login.welcome') }}</h1>
-			<p class="w-[360px] pb-2 font-semibold">{{ t('auth.login.description') }}</p>
+			<AppTitle
+				class="w-[360px]"
+				:text="t('auth.login.welcome')"
+			/>
+			<AppText
+				class="w-[360px]"
+				:text="t('auth.login.description')"
+			/>
 		</div>
 
 		<div class="mb-2 w-[360px]">
