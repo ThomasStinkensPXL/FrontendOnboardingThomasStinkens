@@ -23,6 +23,8 @@
     "username": "Gebruikersnaam"
   },
   "todos": {
+    "delete": "Verwijder to do",
+    "edit": "Bewerk to do",
     "empty": "Geen to do's gevonden.",
     "my_todos": "Mijn to do's"
   }

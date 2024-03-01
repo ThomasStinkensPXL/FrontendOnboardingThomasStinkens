@@ -3,11 +3,12 @@ import dayjs from 'dayjs'
 import { useI18n } from 'vue-i18n'
 
 import AppCheckbox from '@/components/AppCheckbox.vue'
+import AppIconText from '@/components/AppIconText.vue'
 import AppText from '@/components/AppText.vue'
 import AppTextSuppressed from '@/components/AppTextSuppressed.vue'
 import CalendarIcon from '@/icons/CalendarIcon.vue'
-import OptionsDotIcon from '@/icons/OptionsDotIcon.vue'
 import type { Todo } from '@/models/todos/todo.module'
+import TodoListItemOptionsButton from '@/modules/todos/components/TodoListItemOptionsButton.vue'
 import('dayjs/locale/en')
 
 const props = defineProps<{
@@ -39,13 +40,11 @@ function formatDate(date: string): string {
 				class="flex h-fit flex-row"
 				:class="{ 'text-red-600': !props.todo.isCompleted }"
 			>
-				<CalendarIcon />
-				<AppText
-					class="ml-1 pb-0"
-					:text="formatDate(props.todo.deadline)"
-				/>
+				<AppIconText :text="formatDate(props.todo.deadline)">
+					<CalendarIcon class="h-5 w-5" />
+				</AppIconText>
 			</div>
 		</div>
-		<OptionsDotIcon class="aspect-square h-fit flex-none basis-5" />
+		<TodoListItemOptionsButton class="h-fit flex-none basis-5" />
 	</li>
 </template>
