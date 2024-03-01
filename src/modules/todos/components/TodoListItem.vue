@@ -15,14 +15,24 @@ const props = defineProps<{
 	todo: Todo
 }>()
 
+const emit = defineEmits<{
+	editClicked: [string]
+	deleteClicked: [string]
+}>()
+
 const { t } = useI18n()
 
 function formatDate(date: string): string {
 	return dayjs(date).format(t('shared.dateFormat'))
 }
-// const formatDate = (date: string) => {
-// 	return dayjs(date).format('DD/MM/YYYY')
-// };
+
+function deleteTodo(): void {
+	emit('deleteClicked', props.todo.uuid)
+}
+
+function editTodo(): void {
+	emit('editClicked', props.todo.uuid)
+}
 </script>
 
 <template>
@@ -45,6 +55,10 @@ function formatDate(date: string): string {
 				</AppIconText>
 			</div>
 		</div>
-		<TodoListItemOptionsButton class="h-fit flex-none basis-5" />
+		<TodoListItemOptionsButton
+			class="h-fit flex-none basis-5"
+			@delete-clicked="deleteTodo"
+			@edit-clicked="editTodo"
+		/>
 	</li>
 </template>
