@@ -1,0 +1,23 @@
+{
+  "auth": {
+    "create_account": "Create one!",
+    "forgot_password": "Forgot password?",
+    "login": {
+      "description": "At mi amet vulputate ut dictum. Quam ac ut a feugiat.",
+      "incorrect": "Wrong username/password",
+      "welcome": "Welcome!"
+    },
+    "no_account": "Don't have an account yet?"
+  },
+  "shared": {
+    "404": "[404] Page not Found",
+    "continue": "Continue",
+    "email": {
+      "long": "Email address"
+    },
+    "empty": "This page does not have any content yet.",
+    "input_placeholder": "Type here...",
+    "password": "Password",
+    "username": "Username"
+  }
+}

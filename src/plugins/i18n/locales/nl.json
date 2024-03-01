@@ -1,0 +1,23 @@
+{
+  "auth": {
+    "create_account": "Maak er een aan!",
+    "forgot_password": "Wachtwoord vergeten?",
+    "login": {
+      "description": "At mi amet vulputate ut dictum. Quam ac ut a feugiat.",
+      "incorrect": "Foute gebruikersnaam/wachtwoord",
+      "welcome": "Welkom!"
+    },
+    "no_account": "Heeft u nog geen account?"
+  },
+  "shared": {
+    "404": "[404] Pagina niet gevonden",
+    "continue": "Ga verder",
+    "email": {
+      "long": "E-mailadres"
+    },
+    "empty": "Deze pagina heeft nog geen inhoud.",
+    "input_placeholder": "Typ hier...",
+    "password": "Wachtwoord",
+    "username": "Gebruikersnaam"
+  }
+}
