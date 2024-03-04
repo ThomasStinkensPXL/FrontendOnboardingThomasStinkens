@@ -25,7 +25,7 @@ export const useAuthStore = defineStore('auth', () => {
 	}
 
 	async function login(data: AuthLoginForm): Promise<void> {
-		const response = await authService.login(data.username!, data.password!)
+		const response = await authService.login(data.username, data.password)
 		accessToken.value = response.access_token
 	}
 
@@ -37,6 +37,7 @@ export const useAuthStore = defineStore('auth', () => {
 
 	return {
 		currentUser,
+		accessToken,
 		isAuthenticated,
 		getCurrentUser,
 		setCurrentUser,
