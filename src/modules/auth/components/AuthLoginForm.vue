@@ -69,7 +69,7 @@ function submit(): void {
 		<AppButton
 			:class="{ 'bg-light': !form.isValid }"
 			:disabled="!form.isValid"
-			:text="t('shared.continue')"
+			:text="t('shared.continue') + ' >'"
 		/>
 		<p
 			v-if="props.isIncorrect"

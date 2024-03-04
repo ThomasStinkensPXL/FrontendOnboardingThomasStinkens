@@ -23,6 +23,12 @@
     "username": "Gebruikersnaam"
   },
   "todos": {
+    "create": {
+      "deadline": "Deadline",
+      "description": "Opmerking",
+      "new_todo": "Nieuwe to do",
+      "title": "Titel"
+    },
     "delete": "Verwijder to do",
     "edit": "Bewerk to do",
     "empty": "Geen to do's gevonden.",
