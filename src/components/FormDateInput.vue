@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import EyeIcon from '@/icons/EyeIcon.vue'
+import { useI18n } from 'vue-i18n'
+import CalendarIcon from '@/icons/CalendarIcon.vue'
+
+const props = defineProps<{
+	inputName: string
+	label: string
+}>()
+
+const { t } = useI18n()
+
+const model = defineModel<number | string | null>({
+	required: true,
+})
+</script>
+
+<template>
+	<label
+		class="block py-1 font-semibold"
+		:for="props.inputName"
+		>{{ props.label }}</label
+	>
+	<div class="relative content-center">
+		<input
+			:id="props.inputName"
+			v-model="model"
+			class="box-border w-full rounded-lg bg-light-lightest px-4 py-3 text-dark"
+			:name="props.inputName"
+			:placeholder="t('shared.input_placeholder')"
+			type="date"
+		/>
+		<CalendarIcon class="absolute right-0 top-1/4 mx-2 aspect-square h-1/2 text-dark" />
+	</div>
+</template>

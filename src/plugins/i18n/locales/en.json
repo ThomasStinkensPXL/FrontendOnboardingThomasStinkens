@@ -23,6 +23,12 @@
     "username": "Username"
   },
   "todos": {
+    "create": {
+      "deadline": "Deadline",
+      "description": "Note",
+      "new_todo": "New todo",
+      "title": "Title"
+    },
     "delete": "Delete todo",
     "edit": "Edit todo",
     "empty": "No todos found",
