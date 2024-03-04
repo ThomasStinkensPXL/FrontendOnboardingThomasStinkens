@@ -1,7 +1,7 @@
 #   F r o n t e n d O n b o a r d i n g T h o m a s S t i n k e n s 
 # onboarding
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 in Vite..
 
 ## Recommended IDE Setup
 
@@ -69,5 +69,6 @@ pnpm test:e2e --debug
 
 ```sh
 pnpm lint
-``` 
+```
+ 
  
