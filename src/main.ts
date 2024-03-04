@@ -1,5 +1,6 @@
 import './assets/main.css'
 
+import { VueQueryPlugin } from '@tanstack/vue-query'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 
@@ -10,6 +11,6 @@ import App from './App.vue'
 const app = createApp(App)
 const pinia = createPinia()
 
-app.use(i18nPlugin).use(pinia).use(router)
+app.use(i18nPlugin).use(pinia).use(router).use(VueQueryPlugin)
 
 app.mount('#app')

@@ -12,12 +12,20 @@
   "shared": {
     "404": "[404] Page not Found",
     "continue": "Continue",
+    "dateFormat": "DD MMM YYYY (HH:mm)",
     "email": {
       "long": "Email address"
     },
     "empty": "This page does not have any content yet.",
     "input_placeholder": "Type here...",
+    "loading": "Loading...",
     "password": "Password",
     "username": "Username"
+  },
+  "todos": {
+    "delete": "Delete todo",
+    "edit": "Edit todo",
+    "empty": "No todos found",
+    "my_todos": "My todos"
   }
 }

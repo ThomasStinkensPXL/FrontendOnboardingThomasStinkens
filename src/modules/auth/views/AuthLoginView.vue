@@ -3,10 +3,12 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
+import AppText from '@/components/AppText.vue'
+import AppTitle from '@/components/AppTitle.vue'
 import AuthLoginForm from '@/modules/auth/components/AuthLoginForm.vue'
 import { useAuthStore } from '@/modules/auth/stores/auth.store'
-import AppTitle from '@/components/AppTitle.vue'
-import AppText from '@/components/AppText.vue'
+import { useForm } from 'formango'
+import { authLoginFormSchema } from '@/models/auth/login/authLoginForm.model'
 
 const { t } = useI18n()
 const authStore = useAuthStore()
@@ -14,7 +16,15 @@ const router = useRouter()
 
 const isIncorrect = ref<boolean>(false)
 
-async function handleLogin(data: { username: string; password: string }): Promise<void> {
+const { form, onSubmitForm } = useForm({
+	schema: authLoginFormSchema,
+	initialState: {
+		username: '',
+		password: '',
+	},
+})
+
+onSubmitForm(async (data) => {
 	try {
 		await authStore.login(data)
 	} catch (e) {
@@ -22,7 +32,7 @@ async function handleLogin(data: { username: string; password: string }): Promis
 	}
 
 	router.push({ name: 'todos' })
-}
+})
 </script>
 
 <template>
@@ -40,8 +50,8 @@ async function handleLogin(data: { username: string; password: string }): Promis
 
 		<div class="mb-2 w-[360px]">
 			<AuthLoginForm
+				:form="form"
 				:is-incorrect="isIncorrect"
-				@submit="handleLogin"
 			/>
 		</div>
 		<p class="w-[360px] text-center">

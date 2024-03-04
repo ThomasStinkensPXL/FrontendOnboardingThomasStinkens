@@ -12,12 +12,20 @@
   "shared": {
     "404": "[404] Pagina niet gevonden",
     "continue": "Ga verder",
+    "dateFormat": "DD MMM YYYY (HH:mm)",
     "email": {
       "long": "E-mailadres"
     },
     "empty": "Deze pagina heeft nog geen inhoud.",
     "input_placeholder": "Typ hier...",
+    "loading": "Aan het laden...",
     "password": "Wachtwoord",
     "username": "Gebruikersnaam"
+  },
+  "todos": {
+    "delete": "Verwijder to do",
+    "edit": "Bewerk to do",
+    "empty": "Geen to do's gevonden.",
+    "my_todos": "Mijn to do's"
   }
 }
