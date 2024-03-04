@@ -1,50 +1,27 @@
 <script setup lang="ts">
-import { useForm } from 'formango'
+import type { Form } from 'formango'
 import { useI18n } from 'vue-i18n'
-import { z } from 'zod'
 
 import AppButton from '@/components/AppButton.vue'
 import FormInput from '@/components/FormInput.vue'
 import FormPasswordInput from '@/components/FormPasswordInput.vue'
-import type { AuthLoginForm } from '@/models/auth/login/authLoginForm.model'
+import type { authLoginFormSchema } from '@/models/auth/login/authLoginForm.model'
 
 const props = defineProps<{
 	isIncorrect?: string
-}>()
-
-const emit = defineEmits<{
-	submit: [value: AuthLoginForm]
+	form: Form<typeof authLoginFormSchema>
 }>()
 
 const { t } = useI18n()
 
-const loginForm = z.object({
-	username: z.string().email().min(1),
-	password: z.string().min(1),
-})
-
-const { form } = useForm({
-	schema: loginForm,
-	initialState: {
-		username: '',
-		password: '',
-	},
-})
-
-const username = form.register('username', '')
-const password = form.register('password', '')
-
-function submit(): void {
-	if (form.isValid) {
-		emit('submit', { username: username.modelValue, password: password.modelValue })
-	}
-}
+const username = props.form.register('username', '')
+const password = props.form.register('password', '')
 </script>
 
 <template>
 	<form
 		class="w-full"
-		@submit.prevent="submit()"
+		@submit.prevent="form.submit()"
 	>
 		<FormInput
 			v-bind="username"

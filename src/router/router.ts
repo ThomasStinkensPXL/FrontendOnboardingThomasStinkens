@@ -42,6 +42,8 @@ const router = createRouter({
 
 router.beforeEach(async (to) => {
 	if (to.meta.requiresAuth && !useAuthStore().isAuthenticated) {
+		await useAuthStore().getCurrentUser()
+
 		return {
 			name: RouteNames.login,
 		}
