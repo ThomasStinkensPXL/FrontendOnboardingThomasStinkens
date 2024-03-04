@@ -7,7 +7,7 @@ import AppIconText from '@/components/AppIconText.vue'
 import AppText from '@/components/AppText.vue'
 import AppTextSuppressed from '@/components/AppTextSuppressed.vue'
 import CalendarIcon from '@/icons/CalendarIcon.vue'
-import type { Todo } from '@/models/todos/todo.module'
+import type { Todo } from '@/models/todos/todo.model'
 import TodoListItemOptionsButton from '@/modules/todos/components/TodoListItemOptionsButton.vue'
 import('dayjs/locale/en')
 
